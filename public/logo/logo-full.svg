@@ -1,0 +1,8 @@
+<svg width="200" height="48" viewBox="0 0 200 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Mark -->
+  <path d="M12 36L26 12H40L36 19H26L20 29H30L26 36H12Z" fill="#0F2A6B"/>
+  <path d="M24 19L30 8H40L34 19H24Z" fill="#1A6FD8"/>
+  <!-- Wordmark -->
+  <text x="50" y="32" font-family="Syne, sans-serif" font-weight="800" font-size="24" fill="#0F2A6B" letter-spacing="2">FLOZEN</text>
+  <text x="160" y="32" font-family="Syne, sans-serif" font-weight="800" font-size="24" fill="#1A6FD8">AI</text>
+</svg>
