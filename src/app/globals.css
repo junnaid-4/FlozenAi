@@ -1,0 +1,272 @@
+@import "tailwindcss";
+
+@theme {
+  --font-display: var(--font-instrument-serif), serif;
+  --font-sans: var(--font-inter), sans-serif;
+  --font-mono: var(--font-geist-mono), monospace;
+
+  /* Theme Tokens mapping to CSS variables */
+  --color-void: var(--bg);
+  --color-surface-1: var(--surface);
+  --color-surface-2: var(--surface-v2);
+  --color-surface-3: var(--surface-v3);
+  
+  --color-live: var(--primary);
+  --color-live-dim: var(--glow);
+  --color-live-border: var(--accent-border);
+  
+  --color-text-primary: var(--text);
+  --color-text-secondary: var(--text-v2);
+  --color-text-muted: var(--text-v3);
+  
+  --color-border: var(--border);
+  --color-border-strong: var(--border-strong);
+  
+  --color-logo-blue: var(--logo-blue);
+  --color-alert: #FF5C40;
+  
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 16px;
+  --radius-xl: 24px;
+}
+
+@layer base {
+  * {
+    @apply border-[var(--border)];
+  }
+  body {
+    @apply bg-[var(--bg)] text-[var(--text)];
+  }
+}
+
+:root {
+  /* Default: Sapphire Luxe Dark */
+  --bg: #0A1020; --surface: #121A30; --surface-v2: #1A2440; --surface-v3: #243050;
+  --primary: #4C8DFF; --primary-dark: #0B2D78; --accent: #0B2D78; --glow: rgba(76,141,255,0.38);
+  --text: #F8FAFC; --text-v2: #94A3B8; --text-v3: #64748B;
+  --logo-blue: #4C8DFF;
+  --accent-border: rgba(76,141,255,0.25);
+  --border: rgba(255, 255, 255, 0.08); --border-strong: rgba(255, 255, 255, 0.15);
+  --button-glow: 0 0 30px var(--glow);
+  color-scheme: dark;
+}
+
+.light {
+  /* Default: Sapphire Luxe Light */
+  --bg: #F8FAFC; --surface: #FFFFFF; --surface-v2: #F1F5F9; --surface-v3: #E2E8F0;
+  --primary: #4C8DFF; --primary-dark: #081D4F; --accent: #0B2D78; --glow: rgba(76,141,255,0.28);
+  --text: #111827; --text-v2: #475569; --text-v3: #64748B;
+  --logo-blue: #0B2D78;
+  --accent-border: rgba(76,141,255,0.15);
+  --border: rgba(11, 45, 120, 0.08); --border-strong: rgba(11, 45, 120, 0.15);
+  --button-glow: 0 0 30px var(--glow);
+  color-scheme: light;
+}
+
+/* 1. Sapphire Luxe */
+[data-theme="sapphire-luxe-dark"] {
+  --bg: #0A1020; --surface: #121A30; --surface-v2: #1A2440; --surface-v3: #243050;
+  --primary: #4C8DFF; --accent: #0B2D78; --glow: rgba(76,141,255,0.38);
+  --text: #F8FAFC; --text-v2: #94A3B8; --text-v3: #64748B;
+  --logo-blue: #4C8DFF;
+  --accent-border: rgba(76,141,255,0.25);
+}
+[data-theme="sapphire-luxe-light"] {
+  --bg: #F8FAFC; --surface: #FFFFFF; --surface-v2: #F1F5F9; --surface-v3: #E2E8F0;
+  --primary: #4C8DFF; --accent: #0B2D78; --glow: rgba(76,141,255,0.28);
+  --text: #111827; --text-v2: #475569; --text-v3: #64748B;
+  --logo-blue: #0B2D78;
+  --accent-border: rgba(76,141,255,0.15);
+}
+
+/* 2. Emerald Executive */
+[data-theme="emerald-executive-dark"] {
+  --bg: #08110D; --surface: #102019; --surface-v2: #182F25; --surface-v3: #223F32;
+  --primary: #10B981; --accent: #6EE7B7; --glow: rgba(52,211,153,0.35);
+  --text: #ECFDF5; --text-v2: #A7F3D0; --text-v3: #6EE7B7;
+  --logo-blue: #10B981;
+  --accent-border: rgba(52,211,153,0.25);
+}
+[data-theme="emerald-executive-light"] {
+  --bg: #F0FDF4; --surface: #FFFFFF; --surface-v2: #DCFCE7; --surface-v3: #BBF7D0;
+  --primary: #059669; --accent: #34D399; --glow: rgba(52,211,153,0.28);
+  --text: #064E3B; --text-v2: #065F46; --text-v3: #059669;
+  --logo-blue: #059669;
+  --accent-border: rgba(52,211,153,0.15);
+}
+
+/* 3. Titanium Elite */
+[data-theme="titanium-elite-dark"] {
+  --bg: #111111; --surface: #1E1E1E; --surface-v2: #2A2A2A; --surface-v3: #333333;
+  --primary: #94A3B8; --accent: #E2E8F0; --glow: rgba(148,163,184,0.30);
+  --text: #FFFFFF; --text-v2: #CBD5E1; --text-v3: #94A3B8;
+  --logo-blue: #94A3B8;
+  --accent-border: rgba(148,163,184,0.2);
+}
+[data-theme="titanium-elite-light"] {
+  --bg: #F8FAFC; --surface: #FFFFFF; --surface-v2: #F1F5F9; --surface-v3: #E2E8F0;
+  --primary: #64748B; --accent: #CBD5E1; --glow: rgba(148,163,184,0.28);
+  --text: #111827; --text-v2: #475569; --text-v3: #64748B;
+  --logo-blue: #64748B;
+  --accent-border: rgba(148,163,184,0.15);
+}
+
+/* 4. Royal Violet */
+[data-theme="royal-violet-dark"] {
+  --bg: #140A18; --surface: #24102C; --surface-v2: #2D1438; --surface-v3: #3D1C4D;
+  --primary: #A78BFA; --accent: #DDD6FE; --glow: rgba(196,181,253,0.35);
+  --text: #FAF5FF; --text-v2: #E9D5FF; --text-v3: #C084FC;
+  --logo-blue: #A78BFA;
+  --accent-border: rgba(196,181,253,0.25);
+}
+[data-theme="royal-violet-light"] {
+  --bg: #FAF5FF; --surface: #FFFFFF; --surface-v2: #F3E8FF; --surface-v3: #E9D5FF;
+  --primary: #7C3AED; --accent: #C4B5FD; --glow: rgba(196,181,253,0.28);
+  --text: #1F1235; --text-v2: #581C87; --text-v3: #7C3AED;
+  --logo-blue: #7C3AED;
+  --accent-border: rgba(196,181,253,0.15);
+}
+
+/* 5. Champagne Gold */
+[data-theme="champagne-gold-dark"] {
+  --bg: #16120A; --surface: #241D12; --surface-v2: #2E2517; --surface-v3: #3D3220;
+  --primary: #D4AF37; --accent: #F5D76E; --glow: rgba(245,215,110,0.34);
+  --text: #FFFBEA; --text-v2: #FEF3C7; --text-v3: #F59E0B;
+  --logo-blue: #D4AF37;
+  --accent-border: rgba(245,215,110,0.25);
+}
+[data-theme="champagne-gold-light"] {
+  --bg: #FAF8F3; --surface: #FFFFFF; --surface-v2: #FEFBEB; --surface-v3: #FEF3C7;
+  --primary: #C9A227; --accent: #E7C55B; --glow: rgba(231,197,91,0.28);
+  --text: #1A1A1A; --text-v2: #78350F; --text-v3: #B45309;
+  --logo-blue: #C9A227;
+  --accent-border: rgba(231,197,91,0.15);
+}
+
+/* 6. Arctic Blue */
+[data-theme="arctic-blue-dark"] {
+  --bg: #0B1220; --surface: #172036; --surface-v2: #1E2945; --surface-v3: #283659;
+  --primary: #60A5FA; --accent: #93C5FD; --glow: rgba(96,165,250,0.35);
+  --text: #F8FAFC; --text-v2: #BFDBFE; --text-v3: #60A5FA;
+  --logo-blue: #60A5FA;
+  --accent-border: rgba(96,165,250,0.25);
+}
+[data-theme="arctic-blue-light"] {
+  --bg: #EFF6FF; --surface: #FFFFFF; --surface-v2: #DBEAFE; --surface-v3: #BFDBFE;
+  --primary: #2563EB; --accent: #60A5FA; --glow: rgba(96,165,250,0.28);
+  --text: #111827; --text-v2: #1E40AF; --text-v3: #2563EB;
+  --logo-blue: #2563EB;
+  --accent-border: rgba(96,165,250,0.15);
+}
+
+/* 7. Copper Luxe */
+[data-theme="copper-luxe-dark"] {
+  --bg: #1A120B; --surface: #2A1D13; --surface-v2: #38271A; --surface-v3: #4A3423;
+  --primary: #F59E0B; --accent: #FCD34D; --glow: rgba(245,158,11,0.34);
+  --text: #FFF7ED; --text-v2: #FFEDD5; --text-v3: #F59E0B;
+  --logo-blue: #F59E0B;
+  --accent-border: rgba(245,158,11,0.25);
+}
+[data-theme="copper-luxe-light"] {
+  --bg: #FFF8F5; --surface: #FFFFFF; --surface-v2: #FFEDD5; --surface-v3: #FED7AA;
+  --primary: #B45309; --accent: #FDBA74; --glow: rgba(253,186,116,0.28);
+  --text: #2B1305; --text-v2: #7C2D12; --text-v3: #B45309;
+  --logo-blue: #B45309;
+  --accent-border: rgba(253,186,116,0.15);
+}
+
+/* 8. Cyber Cyan */
+[data-theme="cyber-cyan-dark"] {
+  --bg: #06131A; --surface: #0F1F28; --surface-v2: #152A36; --surface-v3: #1D3A4A;
+  --primary: #06B6D4; --accent: #67E8F9; --glow: rgba(103,232,249,0.35);
+  --text: #ECFEFF; --text-v2: #A5F3FC; --text-v3: #06B6D4;
+  --logo-blue: #06B6D4;
+  --accent-border: rgba(103,232,249,0.25);
+}
+[data-theme="cyber-cyan-light"] {
+  --bg: #ECFEFF; --surface: #FFFFFF; --surface-v2: #CFFAFE; --surface-v3: #A5F3FC;
+  --primary: #0891B2; --accent: #67E8F9; --glow: rgba(103,232,249,0.28);
+  --text: #083344; --text-v2: #164E63; --text-v3: #0891B2;
+  --logo-blue: #0891B2;
+  --accent-border: rgba(103,232,249,0.15);
+}
+
+/* 9. Sage Intelligence */
+[data-theme="sage-intelligence-dark"] {
+  --bg: #10130F; --surface: #1A2018; --surface-v2: #242B21; --surface-v3: #30392C;
+  --primary: #7FA38B; --accent: #B7E4C0; --glow: rgba(143,214,163,0.34);
+  --text: #F7FFF7; --text-v2: #D1FAE5; --text-v3: #7FA38B;
+  --logo-blue: #7FA38B;
+  --accent-border: rgba(143,214,163,0.25);
+}
+[data-theme="sage-intelligence-light"] {
+  --bg: #F5FAF7; --surface: #FFFFFF; --surface-v2: #E8F5EE; --surface-v3: #D1FAE5;
+  --primary: #5E7A67; --accent: #8FD6A3; --glow: rgba(143,214,163,0.28);
+  --text: #102014; --text-v2: #064E3B; --text-v3: #5E7A67;
+  --logo-blue: #5E7A67;
+  --accent-border: rgba(143,214,163,0.15);
+}
+
+/* 10. Ruby Noir */
+[data-theme="ruby-noir-dark"] {
+  --bg: #150A0A; --surface: #241111; --surface-v2: #2F1717; --surface-v3: #3F1E1E;
+  --primary: #EF4444; --accent: #FCA5A5; --glow: rgba(252,165,165,0.34);
+  --text: #FEF2F2; --text-v2: #FEE2E2; --text-v3: #EF4444;
+  --logo-blue: #EF4444;
+  --accent-border: rgba(252,165,165,0.25);
+}
+[data-theme="ruby-noir-light"] {
+  --bg: #FFF5F5; --surface: #FFFFFF; --surface-v2: #FEE2E2; --surface-v3: #FECACA;
+  --primary: #DC2626; --accent: #FCA5A5; --glow: rgba(252,165,165,0.28);
+  --text: #2B0A0A; --text-v2: #991B1B; --text-v3: #DC2626;
+  --logo-blue: #DC2626;
+  --accent-border: rgba(252,165,165,0.15);
+}
+
+.custom-scrollbar::-webkit-scrollbar {
+  width: 6px;
+}
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: transparent;
+}
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background: var(--border-strong);
+  border-radius: 10px;
+}
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: var(--primary);
+}
+
+@keyframes pulse-dot {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.5; transform: scale(1.2); }
+}
+
+@keyframes glow-pulse {
+  0%, 100% { 
+    opacity: 0.8;
+    transform: scale(1);
+    box-shadow: 0 0 10px var(--glow-color, currentColor);
+  }
+  50% { 
+    opacity: 1;
+    transform: scale(1.2);
+    box-shadow: 0 0 20px var(--glow-color, currentColor);
+  }
+}
+
+.animate-glow {
+  animation: glow-pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+.glow-filter {
+  filter: drop-shadow(0 0 8px var(--glow-color));
+}
+
+/* Hide default cursor on desktop when custom cursor is active */
+@media (min-width: 768px) and (pointer: fine) {
+  *, *::before, *::after {
+    cursor: none !important;
+  }
+}
